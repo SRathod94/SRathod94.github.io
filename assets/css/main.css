@@ -3794,3 +3794,16 @@ input, select, textarea {
 			}
 
 		}
+
+		.pdf-viewer {
+			margin-top: 30px;
+			text-align: center;
+			background: #fff;
+			padding: 20px;
+			border-radius: 12px;
+			transition: transform 0.3s ease;
+		}
+
+		.pdf-viewer:hover {
+			transform: scale(1.01);
+		}
