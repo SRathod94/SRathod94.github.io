@@ -3873,3 +3873,59 @@ input, select, textarea {
 			flex: 1 1 100%;
 		}
 		}
+
+		/* Two-column layout for Communicator section */
+		.two-column {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 40px;
+		}
+
+		.two-column .content {
+		flex: 1 1 48%;
+		}
+
+		.two-column .left {
+		text-align: left;
+		}
+
+		.two-column .right {
+		text-align: center;
+		}
+
+		/* Responsive stacking for smaller screens */
+		@media (max-width: 900px) {
+		.two-column {
+			flex-direction: column;
+		}
+
+		.two-column .content {
+			flex: 1 1 100%;
+		}
+		}
+				
+		/* Reverse order for Professional section (PDF left, text right) */
+		.reverse {
+		flex-direction: row-reverse;
+		}
+
+		@media (max-width: 900px) {
+		.reverse {
+			flex-direction: column;
+		}
+		}
+
+		/* Force PDF left, text right just for #professional */
+		#professional .left { order: 1; }
+		#professional .right { order: 2; }
+
+		@media (max-width: 900px) {
+		#professional .left, #professional .right { order: initial; }
+		}
+
+		/* Ensure right-side text in two-column sections is left aligned */
+		.two-column .right {
+		text-align: left;
+		}
