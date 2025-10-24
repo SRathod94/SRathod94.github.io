@@ -3929,3 +3929,39 @@ input, select, textarea {
 		.two-column .right {
 		text-align: left;
 		}
+
+		/* ===== Imager 2x2 grid (scoped) ===== */
+		#imager .imager-grid-2x2 {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 28px;
+		margin-top: 28px;
+		}
+
+		/* Make iframes fit nicely without overflow */
+		#imager .pdf-container iframe {
+		width: 100%;
+		height: 420px;      /* adjust if you want taller/shorter viewers */
+		border: none;
+		border-radius: 10px;
+		box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+		display: block;
+		}
+
+		/* Tighten card padding a little in this section */
+		#imager .pdf-viewer {
+		padding: 16px;
+		}
+
+		/* Tablet: still 2 columns but slightly shorter viewers */
+		@media (max-width: 1024px) {
+		#imager .pdf-container iframe { height: 380px; }
+		}
+
+		/* Mobile: stack to 1 column */
+		@media (max-width: 700px) {
+		#imager .imager-grid-2x2 {
+			grid-template-columns: 1fr;
+		}
+		#imager .pdf-container iframe { height: 360px; }
+		}
